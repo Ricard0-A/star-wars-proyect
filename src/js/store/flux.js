@@ -41,23 +41,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 			removeCurrentItem: () => setStore({ currentItem: undefined }),
 			getFavorites: async (resource, uid) => {
 				const store = getStore();
-				const response = await fetch(
-					`${store.baseURL}/${resource}/${uid}`
-				)
-				const body = await response.json();
-				if (!response.ok) return;
-				setStore({
-					favorite: Object.assign({resource},body.result),
-					list: [...store.list, {...body.result, resource}],
-				});
-
+				const actions = getActions();  // Para acceder a las demas actions!
+			
+				const isFavorite = store.list.some(item => String(item.uid) === String(uid) && item.resource === resource);
+			
+				if (isFavorite) {
+					actions.deleteFavorite(uid, resource);
+				} else {
+					const response = await fetch(`${store.baseURL}/${resource}/${uid}`);
+					const body = await response.json();
+					if (!response.ok) return;
+			
+					setStore({
+						favorite: { resource, ...body.result },
+						list: [...store.list, { resource, ...body.result }]
+					});
+				}
 			},
-			deleteFavorite: (deleteFavorite) => {
+			deleteFavorite: (uid, resource) => {
 				const store = getStore();
 				setStore({
-					list: deleteFavorite,
+					list: store.list.filter(item => !(String(item.uid) === String(uid) && item.resource === resource))
 				});
-				console.log(store.list);
 			},
 			
 			exampleFunction: () => {

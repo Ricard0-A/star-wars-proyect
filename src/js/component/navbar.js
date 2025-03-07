@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-export const Navbar = (item, resource) => {
+export const Navbar = () => {
     const context = useContext(Context);
     const params = useParams();
 
@@ -20,7 +20,7 @@ export const Navbar = (item, resource) => {
                 </div>
             </Link>
 
-            {/* Dropdown as favorites */}
+            {/* Favorites Dropdown */}
             <div className="dropdown mx-5">
                 <button className="btn btn-secondary dropdown-toggle btn-lg" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Favoritos
@@ -29,31 +29,21 @@ export const Navbar = (item, resource) => {
                     </span>
                 </button>
                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    {context.store.favorite && (
-                        context.store.list.map((favorite, index) => {
-                            return (
-                                <li className="dropdown-item" key={favorite.uid}>
-                                    <Link to={`${favorite.resource}/${favorite.uid}`}>
-                                        {favorite.properties.name}
-                                    </Link>
-                                    <i
-                                        className="fas fa-solid fa-trash close"
-                                        onClick={(e) => {
-                                            const deleteFavorite = context.store.list.filter(
-                                                (deleteFavorite, i) => {
-                                                    if (index == i) {
-                                                        return false;
-                                                    } else {
-                                                        return true;
-                                                    }
-                                                }
-                                            );
-                                            console.log(deleteFavorite);
-                                            context.actions.deleteFavorite(deleteFavorite);
-                                        }}></i>
-                                </li>
-                            );
-                        })
+                    {context.store.list.length > 0 ? (
+                        context.store.list.map((favorite, index) => (
+                            <li className="dropdown-item d-flex justify-content-between align-items-center" key={favorite.uid}>
+                                <Link to={`/${favorite.resource}/${favorite.uid}`}>
+                                    {favorite.properties?.name || favorite.name}
+                                </Link>
+                                <i
+                                    className="fas fa-trash text-danger"
+                                    style={{ cursor: "pointer" }}
+                                    onClick={() => context.actions.deleteFavorite(favorite.uid, favorite.resource)}
+                                ></i>
+                            </li>
+                        ))
+                    ) : (
+                        <li className="dropdown-item text-muted">No favorites</li>
                     )}
                 </ul>
             </div>

@@ -40,7 +40,6 @@ import vehicle10 from "../img/vehicles/vehicle10.webp";
 import vehicle11 from "../img/vehicles/vehicle11.webp";
 import vehicle12 from "../img/vehicles/vehicle12.jpg";
 
-// Exportamos las imágenes organizadas en un objeto
 const images = {
     planets: {
         "1": planet1,
