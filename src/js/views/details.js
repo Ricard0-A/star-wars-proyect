@@ -30,7 +30,12 @@ export const Details = (props) => {
                             <div className="col-md-5">
                                 <div className="card-body">
                                     <h1 className="card-title text-white"><strong>{store.currentItem.properties.name}</strong></h1>
-                                    <p className="card-text fs-7 text-light pt-2">En una galaxia lejana, donde cada historia resuena a través de estrellas y sistemas olvidados, existe un secreto tan antiguo que solo los Jedi y los Sith susurran en sus leyendas. Ecos de la Fuerza recorren planetas desérticos y estaciones espaciales, moldeando destinos y revelando profecías veladas en el tiempo. Pocos comprenden realmente el equilibrio entre la luz y la oscuridad, pues la verdad habita entre las sombras y la claridad, en una lucha constante por el control de la galaxia.</p>
+                                    <p className="card-text fs-7 text-light pt-2">
+                                        En una galaxia lejana, donde cada historia resuena a través de estrellas y sistemas olvidados, existe un secreto tan antiguo que solo los Jedi
+                                        y los Sith susurran en sus leyendas. Ecos de la Fuerza recorren planetas desérticos y estaciones espaciales, moldeando destinos y revelando
+                                        profecías veladas en el tiempo. Pocos comprenden realmente el equilibrio entre la luz y la oscuridad, pues la verdad habita entre las sombras 
+                                        y la claridad, en una lucha constante por el control de la galaxia.
+                                    </p>
                                 </div>
                             </div>
                         </div>
