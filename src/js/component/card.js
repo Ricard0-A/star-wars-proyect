@@ -34,7 +34,7 @@ export const Card = ({ item, resource }) => {
                 <h3 className="card-title font-weight-bold text-white py-2">{item.name}</h3>
                 <div className="d-flex container justify-content-between">
                     <Link to={`/${resource}/${item.uid}`} className="btn btn-outline-warning">
-                        <strong>Descripción</strong>
+                        <strong>Description</strong>
                     </Link>
                     <button
                         type="button"

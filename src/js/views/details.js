@@ -31,10 +31,11 @@ export const Details = (props) => {
                                 <div className="card-body">
                                     <h1 className="card-title text-white"><strong>{store.currentItem.properties.name}</strong></h1>
                                     <p className="card-text fs-7 text-light pt-2">
-                                        En una galaxia lejana, donde cada historia resuena a través de estrellas y sistemas olvidados, existe un secreto tan antiguo que solo los Jedi
-                                        y los Sith susurran en sus leyendas. Ecos de la Fuerza recorren planetas desérticos y estaciones espaciales, moldeando destinos y revelando
-                                        profecías veladas en el tiempo. Pocos comprenden realmente el equilibrio entre la luz y la oscuridad, pues la verdad habita entre las sombras 
-                                        y la claridad, en una lucha constante por el control de la galaxia.
+                                    In a distant galaxy, where every story echoes through forgotten stars and systems,
+                                    there exists a secret so ancient that only the Jedi and the Sith whisper it in their legends.
+                                    Echoes of the Force ripple across desert planets and space stations, shaping destinies and
+                                    revealing prophecies veiled in time. Few truly understand the balance between light and darkness,
+                                    for the truth dwells between shadows and clarity, in a constant struggle for control of the galaxy.
                                     </p>
                                 </div>
                             </div>
@@ -43,34 +44,34 @@ export const Details = (props) => {
                         <div className="row g-0 justify-content-around py-5" style={{ backgroundColor: "#000000" }}>
                             {params.resource === "people" && (
                                 <div className="d-flex justify-content-around text-center" style={{ color: "#db2818" }}>
-                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Nombre:<br></br></strong>{store.currentItem.properties.name}</div>
-                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Año:<br></br></strong>{store.currentItem.properties.birth_year}</div>
-                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Genero:<br></br></strong>{store.currentItem.properties.gender}</div>
-                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Altura:<br></br></strong>{store.currentItem.properties.height}</div>
-                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Piel:<br></br></strong>{store.currentItem.properties.skin_color}</div>
-                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Ojos:<br></br></strong>{store.currentItem.properties.eye_color}</div>
+                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Name:<br></br></strong>{store.currentItem.properties.name}</div>
+                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Birth:<br></br></strong>{store.currentItem.properties.birth_year}</div>
+                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Gender:<br></br></strong>{store.currentItem.properties.gender}</div>
+                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Height:<br></br></strong>{store.currentItem.properties.height}</div>
+                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Skin Color:<br></br></strong>{store.currentItem.properties.skin_color}</div>
+                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Eyes Color:<br></br></strong>{store.currentItem.properties.eye_color}</div>
                                 </div>
                             )}
 
                             {params.resource === "vehicles" && (
                                 <div className="d-flex justify-content-around p-3 text-center" style={{ color: "#000000" }}>
-                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Nombre:<br></br></strong>{store.currentItem.properties.name}</div>
-                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Modelo:<br></br></strong>{store.currentItem.properties.model}</div>
-                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Pasageros:<br></br></strong>{store.currentItem.properties.passengers}</div>
-                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Longitud:<br></br></strong>{store.currentItem.properties.length}</div>
-                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Capacidad:<br></br></strong>{store.currentItem.properties.cargo_capacity}</div>
-                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Combustible:<br></br></strong>{store.currentItem.properties.consumables}</div>
+                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Name:<br></br></strong>{store.currentItem.properties.name}</div>
+                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Model:<br></br></strong>{store.currentItem.properties.model}</div>
+                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Passengers:<br></br></strong>{store.currentItem.properties.passengers}</div>
+                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Length:<br></br></strong>{store.currentItem.properties.length}</div>
+                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Capacity:<br></br></strong>{store.currentItem.properties.cargo_capacity}</div>
+                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Fuel:<br></br></strong>{store.currentItem.properties.consumables}</div>
                                 </div>
                             )}
 
                             {params.resource === "planets" && (
                                 <div className="d-flex justify-content-around p-3 text-center" style={{ color: "#000000" }}>
-                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Nombre:<br></br></strong>{store.currentItem.properties.name}</div>
-                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Atmosfera Interior:<br></br></strong>{store.currentItem.properties.climate}</div>
-                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Poblacion:<br></br></strong>{store.currentItem.properties.population}</div>
-                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Periodo Orbital:<br></br></strong>{store.currentItem.properties.orbital_period}</div>
-                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Periodo Rotacional:<br></br></strong>{store.currentItem.properties.rotation_period}</div>
-                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Diametro:<br></br></strong>{store.currentItem.properties.diameter}</div>
+                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Name:<br></br></strong>{store.currentItem.properties.name}</div>
+                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Climate:<br></br></strong>{store.currentItem.properties.climate}</div>
+                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Population:<br></br></strong>{store.currentItem.properties.population}</div>
+                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Orbital Period:<br></br></strong>{store.currentItem.properties.orbital_period}</div>
+                                    <div className="col-md-3 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Rotation Period:<br></br></strong>{store.currentItem.properties.rotation_period}</div>
+                                    <div className="col-md-2 p-3 text-light rounded m-2" style={{ backgroundColor: "#000000" }}><strong>Diameter:<br></br></strong>{store.currentItem.properties.diameter}</div>
                                 </div>
                             )}
                             

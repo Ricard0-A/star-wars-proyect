@@ -8,7 +8,7 @@ export const Home = () => {
     return (
         <div className="mt-5 mx-5">
             <div className="d-flex flex-column">
-                <h2 className="custom-title">PERSONAJES</h2> 
+                <h2 className="custom-title">CHARACTERS</h2> 
                 <div className="d-flex flex-row flex-nowrap overflow-auto">
                     {context.store.people.map((character) => (
                         <Card key={character.uid} item={character} resource={"people"} />
@@ -17,7 +17,7 @@ export const Home = () => {
             </div>
             
             <div className="d-flex flex-column mt-5">
-                <h2 className="custom-title">VEHÍCULOS</h2>
+                <h2 className="custom-title">VEHICLES</h2>
                 <div className="d-flex flex-row flex-nowrap overflow-auto">
                     {context.store.vehicles.map((vehicle) => (
                         <Card key={vehicle.uid} item={vehicle} resource={"vehicles"} />
@@ -26,7 +26,7 @@ export const Home = () => {
             </div>
             
             <div className="d-flex flex-column mt-5 mb-5">
-                <h2 className="custom-title">PLANETAS</h2>
+                <h2 className="custom-title">PLANETS</h2>
                 <div className="d-flex flex-row flex-nowrap overflow-auto" style={{ marginBottom: "120px" }}>
                     {context.store.planets.map((planet) => (
                         <Card key={planet.uid} item={planet} resource={"planets"} />
