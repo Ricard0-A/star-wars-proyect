@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React, { useEffect, useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import images from "../../import_images/images"; // Importamos el objeto con todas las imágenes
+import images from "../../import_images/images"; // Check this out 
 
 
 export const Card = ({ item, resource }) => {
@@ -24,7 +24,7 @@ export const Card = ({ item, resource }) => {
     return (
         <div className="card my-5 mx-3 border-2 rounded-2" style={{ minWidth: "20rem", borderRadius: "20px" }} >
             
-            <img src={images[resource]?.[String(item.uid)] || images.vehicles["4"]} className="card-img-top" alt={item.name} />
+            <img src={(images[resource] || images["characters"])?.[String(item.uid)] || images.vehicles["4"]} className="card-img-top" alt={item.name} />
 
 
             <div className="card-body bg-dark text-center">

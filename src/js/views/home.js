@@ -11,7 +11,7 @@ export const Home = () => {
                 <h2 className="custom-title">PERSONAJES</h2> 
                 <div className="d-flex flex-row flex-nowrap overflow-auto">
                     {context.store.people.map((character) => (
-                        <Card key={character.uid} item={character} resource={"characters"} />
+                        <Card key={character.uid} item={character} resource={"people"} />
                     ))}
                 </div>
             </div>

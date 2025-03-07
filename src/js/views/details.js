@@ -8,6 +8,7 @@ export const Details = (props) => {
     const { store, actions } = useContext(Context);
     const params = useParams();
     useEffect(() => {
+        console.log("Resource:", params.resource, "UID:", params.uid);
         if (params.resource && params.uid) {
             actions.getDetails(params.resource, params.uid)
         }
