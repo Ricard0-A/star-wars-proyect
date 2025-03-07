@@ -1,8 +1,4 @@
-
-import PropTypes from "prop-types";
-import React, { useEffect, useContext, useState } from "react";
-import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
+// Importar todas las imágenes
 import planet1 from "../../img/planets/planet1.webp";
 import planet2 from "../../img/planets/planet2.webp";
 import planet3 from "../../img/planets/planet3.png";
@@ -16,7 +12,6 @@ import planet10 from "../../img/planets/planet10.webp";
 import planet11 from "../../img/planets/planet11.webp";
 import planet12 from "../../img/planets/planet12.webp";
 
-// Characters
 import character1 from "../../img/characters/character1.jpg";
 import character2 from "../../img/characters/character2.png";
 import character3 from "../../img/characters/character3.webp";
@@ -29,7 +24,7 @@ import character9 from "../../img/characters/character9.webp";
 import character10 from "../../img/characters/character10.jpg";
 import character11 from "../../img/characters/character11.jpg";
 import character12 from "../../img/characters/character12.webp";
-// Vehicles
+
 import vehicle1 from "../../img/vehicles/vehicle1.webp";
 import vehicle2 from "../../img/vehicles/vehicle2.jpeg";
 import vehicle3 from "../../img/vehicles/vehicle3.webp";
@@ -43,6 +38,7 @@ import vehicle10 from "../../img/vehicles/vehicle10.webp";
 import vehicle11 from "../../img/vehicles/vehicle11.webp";
 import vehicle12 from "../../img/vehicles/vehicle12.jpg";
 
+// Mapeo de imágenes
 const images = {
     planets: {
         "1": planet1, "2": planet2, "3": planet3, "4": planet4, "5": planet5,
@@ -61,49 +57,5 @@ const images = {
     }
 };
 
-export const Card = ({ item, resource }) => {
-    const { store, actions } = useContext(Context);
-
-   
-    const [like, setLike] = useState(false);
-    const handleClick = () => {
-        setLike(!like)
-    }
-
-    useEffect(() => {
-        if (like) {
-            actions.getFavorites(resource, item.uid)
-        }
-    }, [like])
-    console.log("Resource:", resource);
-    console.log("Item UID:", item.uid);
-    console.log("Available images:", images[resource]);
-    return (
-        <div className="card my-5 mx-3 border-2 rounded-2" style={{ minWidth: "20rem", borderRadius: "20px" }} >
-            
-            <img src={images[resource][String(item.uid)] || vehicle1} className="card-img-top" alt={item.name} />
-
-            <div className="card-body bg-dark text-center">
-                <h3 className="card-title font-weight-bold text-white py-2">{item.name}</h3>
-                <div className="d-flex container justify-content-between">
-                    <Link to={`/${resource}/${item.uid}`} className="btn btn-outline-warning">
-                        <strong>Descripción </strong>
-                    </Link>
-                    <button
-                        type="button"
-                        onClick={handleClick}
-                        className={"btn btn-outline-danger" + (like ? "btn btn-warning" : "btn btn-outline-danger")}>
-                        <i className="fas fa-regular fa-heart"></i>
-                    </button>
-                </div>
-            </div>
-        </div >
-    )
-}
-
-Card.propTypes = {
-    item: PropTypes.object,
-    resource: PropTypes.string,
-};
-
-
+// Exportar
+export default images;

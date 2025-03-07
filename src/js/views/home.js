@@ -10,27 +10,30 @@ export const Home = () => {
             <div className="d-flex flex-column">
                 <h2 className="custom-title">PERSONAJES</h2> 
                 <div className="d-flex flex-row flex-nowrap overflow-auto">
-                    {context.store.people.map((character, index) => {
-                        return <Card key={character.uid} item={character} resource={"people"} />
-                    })}
+                    {context.store.people.map((character) => (
+                        <Card key={character.uid} item={character} resource={"characters"} />
+                    ))}
                 </div>
             </div>
+            
             <div className="d-flex flex-column mt-5">
-                <h2 className="custom-title">VEHICULOS</h2>
+                <h2 className="custom-title">VEHÍCULOS</h2>
                 <div className="d-flex flex-row flex-nowrap overflow-auto">
-                    {context.store.vehicles.map((vehicle, index) => {
-                        return <Card key={vehicle.uid} item={vehicle} resource={"vehicles"} />
-                    })}
+                    {context.store.vehicles.map((vehicle) => (
+                        <Card key={vehicle.uid} item={vehicle} resource={"vehicles"} />
+                    ))}
                 </div>
             </div>
+            
             <div className="d-flex flex-column mt-5 mb-5">
-                <h2 className="custom-title">PLANETAS</h2> {/* Aplicar clase aquí */}
-                <div className="d-flex flex-row flex-nowrap overflow-auto" style={{marginBottom:"120px"}}>
-                    {context.store.planets.map((planet, index) => {
-                        return <Card key={planet.uid} item={planet} resource={"planets"} />
-                    })}
+                <h2 className="custom-title">PLANETAS</h2>
+                <div className="d-flex flex-row flex-nowrap overflow-auto" style={{ marginBottom: "120px" }}>
+                    {context.store.planets.map((planet) => (
+                        <Card key={planet.uid} item={planet} resource={"planets"} />
+                    ))}
                 </div>
             </div>
         </div>
     );
-}
+};
+
