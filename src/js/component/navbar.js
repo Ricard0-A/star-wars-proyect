@@ -23,7 +23,7 @@ export const Navbar = () => {
             {/* Favorites Dropdown */}
             <div className="dropdown mx-5">
                 <button className="btn btn-secondary dropdown-toggle btn-lg" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    Favoritos
+                    Favorites
                     <span className="badge badge-pill badge-danger">
                         {context.store.list.length}
                     </span>
